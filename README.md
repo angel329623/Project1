@@ -2,7 +2,7 @@
 
 The files in this repository were used to configure the network depicted below.
 
-  ![diagram](https://github.com/angel329623/Project1/blob/master/Images/diagram.JPG)
+  ![image](https://github.com/angel329623/Project1/blob/master/Images/diagram.JPG)
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
@@ -21,8 +21,7 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly secure from distributed denial-of-service (DDoS) attacks by switching traffic from a private server to a public cloud, in addition to restricting _____ to the network.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
 - Collect data in the file sytem.
@@ -42,24 +41,24 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the ___ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- 10.1.0.
+Only the Elk Server machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+-10.0.0.4
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+
+Machines within the network can only be accessed by using the Jump Box (10.0.0.4).
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Jump Box | No                  | 10.0.0.4             |
+| web01    | No                  | 10.0.0.6             |
+| web02    | No                  | 10.0.0.7             |
+| Elk-SER  | No                  | 10.1.0.4             |
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows administrators to automate daily tasks and allows IT personel to focus on more important projects.
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
@@ -76,10 +75,12 @@ This ELK server is configured to monitor the following machines:
 - 10.0.0.7
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Filebeat
+- Metricbeat
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat, collects file system log data. Monitors log files, specific log events and forwards all logs to ELK.
+- Metricbeat, Collects machine metrics from the OS. Statistics are gather to any specified output and forwards data to ELK.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
