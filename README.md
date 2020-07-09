@@ -6,6 +6,7 @@ The files in this repository were used to configure the network depicted below.
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the _____ file may be used to install only certain pieces of it, such as Filebeat.
 
   ![Filebeat Playbook](https://github.com/angel329623/Project1/blob/master/filebeat-playbook.yml)
+
   ![Metricbeat Playbook](https://github.com/angel329623/Project1/blob/master/metricbeat-playbook.yml)
 
 This documents contains the following details:
@@ -18,7 +19,7 @@ This documents contains the following details:
 
 
 ### Description of the Topology
-The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
+The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the Damn Vulnerable Web Application.
 
 Load balancing ensures that the application will be highly secure from distributed denial-of-service (DDoS) attacks by switching traffic from a private server to a public cloud, in addition to restricting unauthorized access to the network.
 
