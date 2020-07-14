@@ -92,6 +92,12 @@ SSH into the control node and follow the steps below:
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 
 ```
-curl https://github.com/angel329623/Project1/blob/master/filebeat-playbook.yml > /etc/ansible/files/filebeat-config.yml
+docker ps
+
+nano /etc/ansible/hosts/
+
+curl https://github.com/angel329623/Project1/blob/master/filebeat-playbook.yml > your/path/filebeat-config.yml
+
+curl https://github.com/angel329623/Project1/blob/master/metricbeat-playbook.yml > your/path/metricbeat-config.yml
 
 ```
