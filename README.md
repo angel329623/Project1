@@ -41,7 +41,7 @@ The machines on the internal network are not exposed to the public Internet.
 Only the Elk Server machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
 -10.0.0.4
 
-Machines within the network can only be accessed by using the Jump Box (10.0.0.4).
+Machines within the network can only be accessed by using the Jump Box.
 
 A summary of the access policies in place can be found in the table below.
 
@@ -57,7 +57,6 @@ A summary of the access policies in place can be found in the table below.
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because it allows administrators to automate daily tasks and allows IT personel to focus on more important projects.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
 - Crate an Azure account with in the same resource group.
 - Download images that install Docker and configures to ELK container.
 - Run playbooks 
@@ -85,14 +84,9 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Copy the public key file file to ansible.
-- Update the _____ file to include...
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
-
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- Copy both the Filebeat Playbook and Metricbeat Playbook files to ansible machine.
+- Update the hosts file to include specific private IP adresses for each machine that ELK is desired.
+- Run the playbook, and navigate http://ELKserverpublicIP:5601/app/kibana to to check that the installation worked as expected.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
 .
