@@ -39,6 +39,7 @@ The configuration details of each machine may be found below.
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the Elk Server machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+
 -10.0.0.4
 
 Machines within the network can only be accessed by using the Jump Box.
@@ -59,8 +60,8 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 The playbook implements the following tasks:
 - Crate an Azure account with in the same resource group.
 - Download images that install Docker and configures to ELK container.
-- Run playbooks 
-- Modify ELK and restrict access.
+- Run both playbooks 
+- Modify ELK server and restrict access.
  
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
@@ -89,4 +90,6 @@ SSH into the control node and follow the steps below:
 - Run the playbook, and navigate http://ELKserverpublicIP:5601/app/kibana to to check that the installation worked as expected.
 
 _As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
-.
+
+- curl https://github.com/angel329623/Project1/blob/master/filebeat-playbook.yml > /etc/ansible/files/filebeat-config.yml
+
