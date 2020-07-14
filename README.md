@@ -89,7 +89,7 @@ SSH into the control node and follow the steps below:
 - Update the hosts file to include specific private IP adresses for each machine that ELK is desired.
 - Run the playbook, and navigate http://ELKserverpublicIP:5601/app/kibana to to check that the installation worked as expected.
 
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
+_Commands_
 
 ```
 docker ps
