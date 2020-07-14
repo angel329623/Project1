@@ -32,7 +32,7 @@ The configuration details of each machine may be found below.
 | Jump Box | Gateway  | 10.0.0.4   | Linux            |
 | Web01    | Server   | 10.0.0.6   | Linux            |
 | web02    | Server   | 10.0.0.7   | Linux            |
-| ELK-ser  | Server   | 10.1.0.4   | Linux            |
+| ELK-SER  | Server   | 10.1.0.4   | Linux            |
 
 
 ### Access Policies
@@ -58,13 +58,15 @@ Ansible was used to automate configuration of the ELK machine. No configuration 
 
 The playbook implements the following tasks:
 - _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
-
+- Crate an Azure account with in the same resource group.
+- Download images that install Docker and configures to ELK container.
+- Run playbooks 
+- Modify ELK and restrict access.
+ 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
 ![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
-
+- ![image](https://github.com/angel329623/Project1/blob/master/Images/docker_ps.JPG)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
